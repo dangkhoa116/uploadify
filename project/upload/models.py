@@ -10,7 +10,6 @@ class Document(models.Model):
     name = models.CharField(max_length=100, blank=False)
     document = models.FileField(upload_to='', validators=[validate_file_extension])
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    download_times = models.DecimalField(max_digits=100000,decimal_places=6)
     def __str__(self):
         return self.document.name
     def delete(self , *args, **kwargs):
